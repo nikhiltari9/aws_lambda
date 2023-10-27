@@ -72,6 +72,7 @@ def lambda_handler(event, context):
     
 def validate_parameters(id, first_name, last_name, add, city, county, state, postal_code, landline, email, google_url, phone):
     validation_failed = False
+    test = 'test'
     if id is None:
         print('There is no valid ID for the record')
         validation_failed = True
@@ -97,4 +98,6 @@ def validate_parameters(id, first_name, last_name, add, city, county, state, pos
         google_url = 'default'
     if phone is None:
         validation_failed = True
+    if test is None:
+        test ='default'
     return validation_failed, id, first_name, last_name, add, city, county, state, postal_code, landline, email, google_url, phone
